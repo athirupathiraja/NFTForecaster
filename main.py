@@ -45,7 +45,15 @@ search.send_keys('#NFT')
 search.send_keys(Keys.RETURN)
 latestPosts = driver.find_element_by_link_text('Latest').click()
 
+cards = driver.find_elements_by_xpath('//div[@data-testid="tweet"]')
 
+card = cards[7]
+
+#username
+print(card.find_element_by_xpath('.//span').text)
+
+#text
+print(card.find_element_by_xpath('.//span[contains(text(), "@")]').text)
 #
 # password = driver.find_element_by_xpath('//input[@name="session[password]"]')
 # password.send_keys(myPassword)
